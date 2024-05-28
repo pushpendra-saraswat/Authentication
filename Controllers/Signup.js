@@ -1,6 +1,6 @@
 const User = require('../Models/Signup')
 const bcrypt = require('bcryptjs');
- async function createuser(req,res) {
+export async function createuser(req,res) {
     if (!Username || !email || !password) {
         return res.status(400).json({ error: 'Please provide name, email, and password' });
     }
