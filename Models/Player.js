@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const mongoosePaginate = require('mongoose-paginate');
 const PlayerSchema = new mongoose.Schema({
     Player_name:{
         type:String,
@@ -26,5 +27,6 @@ const PlayerSchema = new mongoose.Schema({
         required: true,
     },
 });
+PlayerSchema.plugin(mongoosePaginate);
 const Player = mongoose.model("player",PlayerSchema);
 module.exports = Player;
